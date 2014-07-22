@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>MathMusic</title>
+    <link rel="stylesheet" href="css/style.css" media="screen" type="text/css" /><link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+</head>
+<body>
+	<span style="margin:0 auto;position:relative;text-align:center;width:100%;display:block;"><h1 style="display:inline-block;">MathMusic</h1><h5 style="display:inline-block;">Calc ure song</h5></span>
+	<hr style="margin-top:2px;margin-bottom:2px;width:50%;">
+	<div id="controls">
+	  <h5>Action/Controls</h5>
+	  <div id="playtime"><button type="button" onclick="togglePlayback();" value="START" id="toggle-button" style="width:25% !important;"><i class="fa fa-play"></i></button></div>
+	  <div id="playtime">
+		<label for="playtimeSlider">Faktor</label><br/>
+		<input type="range" value="2.15", max="10" step="0.1", onchange="updateSlider_a(this.value)" id="playtimeSlider"/>
+		<span id="sliderVal_a">2.15</span>
+	  </div>
+	  <div id="playtime">
+		<label for="pitchSlider">Pitch</label><br/>
+		<input type="range" value="24", max="100" step="1", onchange="updateSlider_b(this.value)" id="pitchSlider"/>
+		<span id="sliderVal_b">24</span>
+	  </div>
+	  <div id="playtime">
+		<label for="playtimeSlider">Beat 1</label><br/>
+		<input type="range" value="690", max="1000" step="10", onchange="updateSlider_c(this.value)" id="playtimeSlider"/>
+		<span id="sliderVal_c">690</span>
+	  </div>	  
+	</div>
+	<hr style="margin-top:2px;margin-bottom:2px;width:50%;">	
+	<h5>Lyric</h5>
+	<div id="lyrics">
+		<span class="LyricLegend">var t = time;</span>
+		<span id="left"><textarea type="text" oninput="compile();" onLoad="focus(this);" onBlur="focus(this);" name="dsp" id="dsp"></textarea></span>
+		<span id="right"><label id="message"></label></span>
+	</div>
+	<hr style="margin-top:2px;margin-bottom:2px;width:50%;">
+	<h5>Live-Wave</h5>
+	<canvas id="waveform" ></canvas>
+	<script src="js/index.js"></script>
+</body>
+
+</html>
